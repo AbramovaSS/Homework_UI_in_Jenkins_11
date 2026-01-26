@@ -3,6 +3,7 @@ package qa.guru.ass;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -15,6 +16,8 @@ public class PracticeFormTest {
     static void testPrecondition() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserVersion = "128.0";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
     @Test
     void fillFormTest() {
