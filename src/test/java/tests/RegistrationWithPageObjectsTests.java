@@ -12,7 +12,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
     @Test
     @DisplayName("Проверка формы регистрации студента")
     void fillFormTest() {
-        step("Открыть страницу с формой регистрации студента /automation-practice-form", () ->
+        step("Открыть страницу с формой регистрации студента", () ->
             registrationPage.openPage());
         step("Заполнить форму регистрации", () -> {
             registrationPage.setFirstName("Svetlana")

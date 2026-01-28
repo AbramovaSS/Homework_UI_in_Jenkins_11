@@ -31,7 +31,6 @@ public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
     TableResponsiveComponent tableResponsiveComponent = new TableResponsiveComponent();
 
-    @Step("Открыть страницу с формой регистрации /automation-practice-form")
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -74,6 +73,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Нажать на поле date of birth и выбрать дату рождения {day} {month} {year} ")
     public RegistrationPage setDateOfBirth(String day, String month, String year) {
         calendarInput.click();
         calendarComponent.setDate(day, month, year);
@@ -81,48 +81,56 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Выбрать предмет \"{value}\" в поле Subjects")
     public RegistrationPage setSubjects(String value) {
         subjectsInput.setValue(value).pressEnter();
 
         return this;
     }
 
+    @Step("Выбрать увлечение \"{value}\" в поле Hobbies")
     public RegistrationPage setHobbies(String value) {
         hobbiesWrapper.$(byText(value)).click();
 
         return this;
     }
 
+    @Step("Нажать на кнопку \"Выберите файл\" и загрузить картинку")
     public RegistrationPage setUploadPicture(String filePath) {
         uploadPicture.uploadFromClasspath(filePath);
 
         return this;
     }
 
+    @Step("Ввести адрес \"{value}\" в поле Current Address")
     public RegistrationPage setCurrentAddress(String value) {
         currentAddressInput.setValue(value);
 
         return this;
     }
 
+    @Step("Нажать на поле Select State")
     public RegistrationPage setStateDropdown() {
         stateDropdown.click();
 
         return this;
     }
 
+    @Step("Выбрать \"{value}\"")
     public RegistrationPage setStateCityWrapper(String value) {
         stateCityWrapper.$(byText(value)).click();
 
         return this;
     }
 
+    @Step("Нажать на поле Select City")
     public RegistrationPage setCityDropdown() {
         cityDropdown.click();
 
         return this;
     }
 
+    @Step("Нажать на кнопку Submit")
     public RegistrationPage setSubmit() {
         submit.click();
 
@@ -135,6 +143,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Проверить, что \"{key}\" соответствует \"{value}\"")
     public RegistrationPage checkResult(String key, String value) {
         tableResponsiveComponent.setTable(key, value);
 
