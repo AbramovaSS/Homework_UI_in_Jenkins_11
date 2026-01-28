@@ -25,7 +25,7 @@ dependencies {
     testImplementation (
             "com.codeborne:selenide:7.13.0",
             "io.qameta.allure:allure-selenide:2.32.0",
-            "org.junit.jupiter:junit-jupiter:5.10.1",
+            "org.junit.jupiter:junit-jupiter:5.10.0",
             "org.slf4j:slf4j-simple:2.0.17"
     )
     testRuntimeOnly(
