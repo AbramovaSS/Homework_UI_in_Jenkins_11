@@ -1,6 +1,6 @@
 plugins {
     id 'java-library'
-    id 'io.qameta.allure' version '3.0.1'
+    id 'io.qameta.allure' version '2.9.6'
 }
 
 repositories {
@@ -9,8 +9,8 @@ repositories {
 
 def selenideVersion = "7.13.0",
     allureVersion = "2.32.0",
-    junitVersion = "5.10.0",
-    slf4jVersion = "2.0.7"
+    junitVersion = "5.14.1",
+    slf4jVersion = "2.0.17"
 
 allure {
     report {
@@ -29,8 +29,12 @@ allure {
 dependencies {
     testImplementation (
             "com.codeborne:selenide:$selenideVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion"
+    )
+    testRuntimeOnly(
+            'org.junit.platform:junit-platform-launcher'
     )
 }
 
